@@ -1,0 +1,146 @@
+/* Acrescentar ao final do styles.css existente. */
+.assignment-form .full-width {
+  grid-column: 1 / -1;
+}
+
+.assignment-form textarea {
+  width: 100%;
+  min-height: 88px;
+  resize: vertical;
+  font: inherit;
+}
+
+.assignment-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .assignment-form .form-actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* Detalhes dos autos processuais */
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+.detail-grid > div,
+.detail-description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.detail-grid small,
+.detail-description small {
+  color: #718096;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.detail-grid strong { color: #26364d; font-size: 14px; overflow-wrap: anywhere; }
+.detail-description { margin-top: 22px; padding-top: 16px; border-top: 1px solid #e8edf3; }
+.detail-description p { margin: 0; color: #45546a; white-space: pre-wrap; }
+.detail-list { margin: 0; padding-left: 20px; display: grid; gap: 10px; color: #34445b; }
+.document-list { display: grid; gap: 10px; }
+.document-row { display: flex; align-items: center; gap: 13px; padding: 12px; border: 1px solid #e5eaf0; border-radius: 9px; }
+.document-icon { color: #52677f; }
+.document-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.document-info strong { color: #26364d; font-size: 14px; }
+.document-info span, .document-info small { color: #718096; font-size: 12px; overflow-wrap: anywhere; }
+.case-timeline { display: grid; gap: 18px; }
+.case-timeline-item { display: flex; align-items: flex-start; gap: 12px; }
+.case-timeline-item > div:last-child { display: grid; gap: 5px; }
+.case-timeline-item strong { color: #26364d; }
+.case-timeline-item span { color: #718096; font-size: 12px; }
+.case-timeline-item p { margin: 2px 0 0; color: #45546a; white-space: pre-wrap; }
+.process-link { color: #245b91; font-weight: 700; text-decoration: none; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; }
+.process-link:hover { text-decoration: underline; }
+@media (max-width: 800px) { .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .detail-grid { grid-template-columns: 1fr; } .document-row { align-items: flex-start; flex-wrap: wrap; } .document-row .secondary-button { margin-left: 32px; } }
+
+/* Ação administrativa de exclusão */
+.danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #e6b7b7;
+  border-radius: 7px;
+  padding: 7px 10px;
+  background: #fff7f7;
+  color: #a52b2b;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.danger-button:hover { background: #fdeaea; border-color: #d99a9a; }
+.danger-button:disabled { opacity: .55; cursor: not-allowed; }
+
+.workflow-panel { border-color: #d7e0ef; }
+.workflow-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.workflow-card { display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 1px solid var(--border, #e5e7eb); border-radius: 10px; background: var(--surface, #fff); }
+.workflow-card h3 { margin: 0; font-size: 14px; }
+.workflow-card label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; }
+.workflow-card input, .workflow-card select { width: 100%; }
+.required-mark { color: #c0392b; font-weight: 700; }
+.field-hint { display: block; margin-top: 5px; color: #687386; font-size: 11px; font-weight: 400; }
+@media (max-width: 760px) { .workflow-grid { grid-template-columns: 1fr; } }
+
+.document-upload-form { margin: 14px 0 18px; }
+.document-upload-form input[type="file"] { padding: 8px; border: 1px dashed var(--border, #cbd5e1); border-radius: 7px; background: var(--surface, #fff); }
+.document-upload-form button { align-self: flex-start; }
+
+/* Formulário de partes e representantes com nome e função livres */
+.party-entry-form { margin: 12px 0 18px; }
+.party-entry-form label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; }
+.party-entry-form input { width: 100%; }
+.party-entry-form button { align-self: flex-start; }
+.confidentiality-card { margin-top: 16px; }
+.confidentiality-card label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; }
+.confidentiality-card select { width: 100%; }
+.workflow-card textarea { width: 100%; min-height: 88px; resize: vertical; font: inherit; }
+
+
+/* Atividade recente integrada ao histórico de movimentações */
+.activity-link {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 8px;
+}
+.activity-link:hover:not(:disabled) {
+  background: rgba(100, 116, 139, 0.08);
+}
+.activity-link:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.activity-link p {
+  margin: 5px 0 0;
+  color: var(--muted, #64748b);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.activity-link > div:last-child { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.activity-link .activity-dot { flex: 0 0 9px; margin-top: 5px; }
+.activity-link strong { font-size: 13px; }
+.activity-link span { color: #718096; font-size: 11px; }
